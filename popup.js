@@ -1,19 +1,20 @@
 var redraw, g, renderer;
 
 window.onload = function() {
-	/* only do all this when document has finished loading (needed for RaphaelJS) */
+	// only do all this when document has finished loading (needed for RaphaelJS)
 	var width = 800;
 	var height = 1000;
 
 	g = new Graph();
 
 	chrome.history.search({'text' : '', 'startTime': 0}, onHistoryElement); 
-
+	
+	// Build the graph after a while, since the chrome api seems to be asynchronous 
 	setTimeout(buildEdges,500);
 	
 	setTimeout(function() {
 		var layouter = new Graph.Layout.Spring(g);
-		/* draw the graph using the RaphaelJS draw implementation */
+		// draw the graph using the RaphaelJS draw implementation
 		renderer = new Graph.Renderer.Raphael('canvas', g, width, height);
 
 		layouter.layout();
@@ -59,6 +60,8 @@ function onHistoryElement(historyItems) {
 			visitCount: historyItems[i].visitCount};
 		var url = historyItems[i].url;
 		addNode(historyItems[i].id);
+		
+		// List the visits to an history element
 		chrome.history.getVisits({url: url}, function(visitItems) {
 			for(var j in visitItems){
 				visits[visitItems[j].visitId] = {

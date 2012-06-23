@@ -14,7 +14,6 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
 <html>
   <head>
-<!-- 	<script src="http://d3js.org/d3.v2.js"></script> -->
     <title>TreeStory - Graph based history visualisation</title>
     <style>
       body {
@@ -23,19 +22,16 @@ chrome.browserAction.onClicked.addListener(function(tab) {
       }
     </style>
 	
+    <!-- JavaScript and HTML must be in separate files for security. -->
+	<!-- 	<script src="http://d3js.org/d3.v2.js"></script> -->
     <script type="text/javascript" src="libs/dracula/raphael-min.js"></script>
     <script type="text/javascript" src="libs/dracula/dracula_graffle.js"></script>
     <script type="text/javascript" src="libs/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="libs/dracula/dracula_graph.js"></script>
-    <!-- JavaScript and HTML must be in separate files for security. -->
+	<script type="text/javascript" src="popup.js"></script>
     
   </head>
   <body>
 	<div id="canvas"></div>
-	<button id="redraw" onclick="redraw();">redraw</button>
-	<button id="hide_penguin" onclick="hide('penguin');">hide penguin (beta)</button>
-	<button id="hide_penguin" onclick="show('penguin');">show penguin (beta)</button>
-	
-	<script src="popup.js"></script>
   </body>
 </html>
