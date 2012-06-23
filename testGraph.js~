@@ -1,0 +1,21 @@
+var theUI = {
+  nodes:{A:{color:"red", shape:"dot", alpha:0.5}, 
+      B:{color:"#b2b19d", shape:"dot", alpha:0.5}, 
+      C:{color:"#b2b19d", shape:"dot", alpha:1}, 
+      D:{color:"#b2b19d", shape:"dot", alpha:1},
+  },
+  edges:{
+      A:{
+          B:{length:.8},
+          C:{length:.8},
+          D:{length:.8}
+           }
+  }
+}
+
+alert("test");
+
+var sys = arbor.ParticleSystem()
+sys.parameters({stiffness:900, repulsion:2000, gravity:true, dt:0.015})
+sys.renderer = Renderer("#viewport")
+sys.graft(theUI) 

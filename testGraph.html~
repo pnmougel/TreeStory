@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script language="javascript" type="text/javascript" src="libs/jquery-1.7.2.min.js"></script>
+        <script language="javascript" type="text/javascript" src="libs/arborjs/lib/arbor.js" ></script>
+        <script language="javascript" type="text/javascript" src="graphics.js" ></script>
+        <script language="javascript" type="text/javascript" src="renderer.js" ></script>
+    </head>
+    <body>
+      <canvas id="viewport" width="800" height="600"></canvas>
+      <script language="javascript" type="text/javascript">
+            var sys = arbor.ParticleSystem(100, 400,1);
+            sys.parameters({gravity:true});
+            sys.renderer = Renderer("#viewport") ;
+            var data = {
+               nodes:{
+                 animals:{'color':'red','shape':'dot','label':'Animals'},
+                 dog:{'color':'green','shape':'dot','label':'dog'},
+                 cat:{'color':'blue','shape':'dot','label':'cat'}
+               }, 
+               edges:{
+                 animals:{ dog:{}, cat:{} },
+                 dog:{ cat:{} }
+               }
+             };
+            sys.graft(data);
+            var animals = sys.addNode('Animals',{'color':'#452565','shape':'dot','label':'Toto'});
+//             sys.addNode('color':'red','shape':'dot','label':'Toto');
+      </script>
+    </body>
+</html>

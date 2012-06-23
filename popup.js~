@@ -13,6 +13,7 @@ window.onload = function() {
 	
 	setTimeout(function() {
 		var layouter = new Graph.Layout.Spring(g);
+
 		/* draw the graph using the RaphaelJS draw implementation */
 		renderer = new Graph.Renderer.Raphael('canvas', g, width, height);
 

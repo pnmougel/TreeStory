@@ -18,7 +18,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     <title>TreeStory - Graph based history visualisation</title>
     <style>
       body {
-        min-width:860px;
+        min-width:800px;
         min-height:1024px;
       }
     </style>
