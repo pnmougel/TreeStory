@@ -1,0 +1,31 @@
+<!doctype html>
+
+<!--<script>
+var id = "hfkmnokmbpdchkjjgmnfadaiemamjhbm";
+function reloadExtension(id) {
+    chrome.management.setEnabled(id, false, function() {
+        chrome.management.setEnabled(id, true);
+    });
+}
+chrome.browserAction.onClicked.addListener(function(tab) {
+    reloadExtension(id);
+});
+</script>-->
+
+<html>
+  <head>
+	<script src="http://d3js.org/d3.v2.js"></script>
+    <title>TreeStory - Graph based history visualisation</title>
+    <style>
+      body {
+        min-width:357px;
+        overflow-x:hidden;
+      }
+    </style>
+	<div id="content"></div>
+    <!-- JavaScript and HTML must be in separate files for security. -->
+    <script src="popup.js"></script>
+  </head>
+  <body>
+  </body>
+</html>
